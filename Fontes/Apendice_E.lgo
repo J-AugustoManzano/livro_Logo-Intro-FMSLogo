@@ -1,0 +1,24 @@
+﻿APRENDA DRAW_SPIN
+  TAT MT 
+  MUDECF [000 000 000] ; PRETO
+  FAÇAPARA [X 0 199] [
+    SE (RESTO :X 6) = 0 [MUDECL [255 000 000]] ; 0 - VERMELHO
+    SE (RESTO :X 6) = 1 [MUDECL [128 000 128]] ; 1 - ROXO
+    SE (RESTO :X 6) = 2 [MUDECL [000 000 255]] ; 2 - AZUL
+    SE (RESTO :X 6) = 3 [MUDECL [000 128 000]] ; 3 - VERD
+    SE (RESTO :X 6) = 4 [MUDECL [255 255 000]] ; 4 - AMARELO
+    SE (RESTO :X 6) = 5 [MUDECL [255 165 000]] ; 5 - LARANJA
+    MUDEESPL INTEIRO (:X / 100 + 1)
+    PF :X
+    PE 59
+  ]
+  OT
+  MUDEESPL 0
+FIM
+
+atribua "ama [255 255 000]
+atribua "azu [000 000 255]
+atribua "lar [255 165 000]
+atribua "rox [128 000 128]
+atribua "ved [000 128 000]
+atribua "ver [255 000 000]

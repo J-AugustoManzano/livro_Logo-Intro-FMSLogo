@@ -1,0 +1,154 @@
+﻿APRENDA CONTAGEM1
+  ATRIBUA "I 1 
+  ENQUANTO [:I <= 5] [
+    ESCREVA :I
+    ATRIBUA "I :I + 1 
+  ]
+FIM
+
+APRENDA CONTAGEM2
+  FAÇAPARA [I 1 5] [
+    ESCREVA :I
+  ]
+FIM
+
+APRENDA ESPIRAL :TAMANHO :ANGULO :NUMERO
+  SE :NUMERO = 0 [
+    PARE
+  ]
+  PF :TAMANHO
+  PD :ANGULO
+  ESPIRAL (:TAMANHO + 8) :ANGULO (:NUMERO - 1)
+FIM
+
+APRENDA ESTRELA40
+  FAÇAPARA [I 1 40] [
+    PT 200 
+    PE 170
+  ]
+FIM
+
+APRENDA FLOR
+  TAT
+  REPITA 8 [PETALA PD 45]
+FIM
+
+APRENDA FLORAL :N
+  DEVOLVA (
+    SE (OU :N < 1 :N > 7) [
+      ESCREVA [Use valores entre 1 e 7]
+    ][
+      REPITA 8 [
+        PD 45 
+        REPITA :N [
+          REPITA 90 [
+            PF 2 
+            PD 2
+          ] 
+          PD 90
+        ]
+      ]
+    ]
+  )
+FIM
+
+APRENDA IMPAR :N
+  DEVOLVA (SE (RESTO :N 2) <> 0 [ESCREVA [Ok]])
+FIM
+
+APRENDA MAXIMO :A :B
+  DEVOLVA (SE :A > :B [ESC :A] [ESC :B])
+FIM
+
+APRENDA MEIOCIRC
+  REPITA 90 [PF 1 PD 1]
+FIM
+
+APRENDA PAR :N
+  DEVOLVA (SE (RESTO :N 2) = 0 [ESCREVA [Ok]] [ESCREVA [Erro]])
+FIM
+
+aprenda PENTA1
+  REPITA 5 [PF 50 PD 360 / 5] 
+fim
+
+APRENDA PENTAGRAMA
+  PD 18
+  ATRIBUA "I 1 
+  ENQUANTO [:I <= 5] [
+    PF 100
+    PD 144 
+  ]
+FIM
+
+APRENDA PETALA
+  MEIOCIRC
+  PD 90
+  MEIOCIRC
+FIM
+
+APRENDA POLIS :TAMANHO :LADO
+  REPITA :LADO [PF :TAMANHO PD 360 / :LADO]
+FIM
+
+aprenda QUAD2 :TAMANHO
+  REPITA 4 [PF :TAMANHO PD 90]
+fim
+
+APRENDA RODAFLOR
+  FAÇAPARA [I 1 6] [ 
+    ATRIBUA "I 1 
+    ENQUANTO [:I <= 120] [
+      PF 1 PD 1
+      ATRIBUA "I :I + 1
+    ]
+    PD 60 
+    REPITA 180 [
+      PF 1 PD 1
+    ] 
+    PD 60
+  ]
+FIM
+
+APRENDA TESTE_E :N
+  DEVOLVA (
+    SE (E :N >= 1 :N <= 9) [
+      ESC [Valor está na faixa de 1 a 9.]
+    ][
+      ESC [Valor não está na faixa de 1 a 9.]
+    ]
+  )
+FIM
+
+APRENDA TESTE_NAO :V
+  DEVOLVA (
+    SE (NÃO :V > 5) [
+      ESC POTÊNCIA :V 2
+    ]
+  )
+FIM
+
+APRENDA TESTE_OU :TEMPO
+  DEVOLVA (
+    SE (OU MAIÚSCULAS :TEMPO = "FRIO" MAIÚSCULAS :TEMPO = "CHUVOSO") [
+      ESC [Tempo ruim, proteja-se.]
+    ][
+      ESC [Tempo bom, aproveite.]
+    ]
+  )
+FIM
+
+APRENDA TRELICA :X
+  SE :X = 0 [PARE]
+  REPITA 4 [TRIANGULAR PF 40 PD 90]
+  PD 90 PF 40 PE 90
+  TRELICA :X - 1
+FIM
+
+APRENDA TRIANGULAR
+  PF 40 PD 135 
+  PF 40 / RAIZQ 2 PD 90 
+  PF 40 / RAIZQ 2 PD 135
+FIM
+
+atribua "i 1
