@@ -1,4 +1,4 @@
-# Linguagem Logo: Introdução com FMSLogo
+# Livro: Linguagem Logo: Introdução com FMSLogo
 
 A linguagem Logo é uma ferramenta que proporciona a aprendizagem de detalhes lógicos de for-ma divertida e descontraída partindo-se de um ponto aparentemente inocente e permitindo ao estudante de programação desenvolver aplicações robustas e complexas. 
 
