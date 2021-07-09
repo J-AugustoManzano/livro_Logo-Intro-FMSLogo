@@ -1,0 +1,472 @@
+﻿APRENDA CAP0501
+  LOCAL "N
+  ESC [Entre valor para o cálculo:]
+  ATR "N LEIAP
+  ESC (FR "Resultado "= POTÊNCIA INTEIRO :N 2)
+FIM
+
+APRENDA CAP0502
+  LOCAL "N
+  LOCAL "R
+  ESC [Entre valor para o cálculo:]
+  ATR "N LEIAP
+  ATR "R POTÊNCIA INTEIRO :N 3
+  ESC (FR "Resultado "= :R)
+FIM
+
+APRENDA CAP0503
+  LOCAL "C
+  LOCAL "F
+  ESC [Entre valor da temperatura em graus Celsius:]
+  ATR "C LEIAP
+  ATR "F :C * 9 / 5 + 32
+  ESC (FR [Temperatura em Fahrenheit] "= FORMATONÚMERO :F 0 2)
+FIM
+
+APRENDA CAP0504
+  LOCAL "F
+  LOCAL "C
+  ESC [Entre valor da temperatura em graus Fahrenheit:]
+  ATR "F LEIAP
+  ATR "C ((:F - 32) * 5) / 9
+  ESC (FR [Temperatura em Celsius] "= FORMATONÚMERO :C 0 2)
+FIM
+
+APRENDA CAP0505
+  LOCAL "A
+  LOCAL "B
+  LOCAL "R
+  ESC [Entre valor o valor <A>:]
+  ATR "A LEIAP
+  ESC [Entre valor o valor <B>:]
+  ATR "B LEIAP
+  ATR "R POTÊNCIA (INTEIRO :A - INTEIRO :B) 2
+  ESC (FR [Quadrado da diferença] "= :R)
+FIM
+
+APRENDA CAP0506
+  LOCAL "N
+  LOCAL "R
+  ESC [Entre valor numérico inteiro:]
+  ATR "N LEIAP
+  ATR "R (INTEIRO :N) * 2
+  SE :R > 30 [
+    ESC (FR "Resultado "= :R)
+  ]
+FIM
+
+APRENDA CAP0507
+  LOCAL "A
+  LOCAL "B
+  ESC [Entre valor numérico real <A>:]
+  ATR "A LEIAP
+  ESC [Entre valor numérico real <B>:]
+  ATR "B LEIAP
+  SESENÃO :A > :B [
+    ESC (FR "Resultado "= :A - :B)
+  ][
+    ESC (FR "Resultado "= :B - :A)
+  ]
+FIM
+
+APRENDA CAP0508
+  LOCAL "A
+  LOCAL "B
+  LOCAL "R
+  ESC [Entre valor numérico real <A>:]
+  ATR "A LEIAP
+  ESC [Entre valor numérico real <B>:]
+  ATR "B LEIAP
+  SE :A > :B [
+     ATR "R :A - :B
+  ][
+     ATR "R :B - :A
+  ]
+  ESC (FR "Resultado "= :R)
+FIM
+
+APRENDA CAP0509
+  LOCAL "A
+  LOCAL "B
+  LOCAL "C
+  LOCAL "R
+  ESC [Entre valor numérico real <A>:]
+  ATR "A LEIAP
+  ESC [Entre valor numérico real <B>:]
+  ATR "B LEIAP
+  ESC [Entre valor numérico real <C>:]
+  ATR "C LEIAP
+  ATR "R INTEIRO :A + INTEIRO :B + INTEIRO :C
+  SE :R >= 100 [
+     ESC (FR "Resultado "= :R)
+  ]
+FIM
+
+APRENDA CAP0510
+  LOCAL "S
+  ATR "S 0
+  REPITA 100 [
+    ATR "S :S + CONTEVEZES
+  ]
+  ESC (FR "Somatório: "= :S)
+FIM
+
+APRENDA CAP0511
+  LOCAL "S
+  ATR "S 0
+  LOCAL "I
+  ATR "I 1
+  ENQUANTO [:I <= 100] [
+    ATR "S :S + :I
+    ATR "I :I + 1
+  ]
+  ESC (FR "Somatório: "= :S)
+FIM
+
+APRENDA CAP0512
+  LOCAL "S
+  ATR "S 0
+  LOCAL "I
+  ATR "I 1
+  FAÇA.ATÉ [
+    ATR "S :S + :I
+    ATR "I :I + 1
+  ] [:I > 100]
+  ESC (FR "Somatório: "= :S)
+FIM
+
+APRENDA CAP0513
+  LOCAL "S
+  ATR "S 0
+  FAÇAPARA [I 1 100] [
+    ATR "S :S + :I
+  ]
+  ESC (FR "Somatório: "= :S)
+FIM
+
+APRENDA CAP0514
+  LOCAL "S
+  ATR "S 0
+  REPITA 500 [
+    SE (RESTO CONTEVEZES 2) = 0 [
+      ATR "S :S + CONTEVEZES
+    ]
+  ]
+  ESC (FR "Somatório: "= :S)
+FIM
+
+APRENDA CAP0515
+  LOCAL "S
+  ATR "S 0
+  LOCAL "I
+  ATR "I 1
+  ENQUANTO [:I <= 500] [
+    SE (RESTO :I 2) = 0 [
+      ATR "S :S + :I
+    ]
+    ATR "I :I + 1
+  ]
+  ESC (FR "Somatório: "= :S)
+FIM
+
+APRENDA CAP0516
+  LOCAL "S
+  ATR "S 0
+  LOCAL "I
+  ATR "I 1
+  FAÇA.ATÉ [
+    SE (RESTO :I 2) = 0 [
+      ATR "S :S + :I
+    ]
+    ATR "I :I + 1
+  ] [:I > 500]
+  ESC (FR "Somatório: "= :S)
+FIM
+
+APRENDA CAP0517
+  LOCAL "S
+  ATR "S 0
+  FAÇAPARA [I 1 500] [
+    SE (RESTO :I 2) = 0 [
+      ATR "S :S + :I
+    ]
+  ]
+  ESC (FR "Somatório: "= :S)
+FIM
+
+APRENDA CAP0518
+  REPITA 19 [
+    SE (RESTO CONTEVEZES 4) = 0 [
+      ESC CONTEVEZES
+    ]
+  ]
+FIM
+
+APRENDA CAP0519
+  LOCAL "I
+  ATR "I 1
+  ENQUANTO [:I <= 19] [
+    SE (RESTO :I 4) = 0 [
+      ESC :I
+    ]
+    ATR "I :I + 1
+  ]
+FIM
+
+APRENDA CAP0520
+  LOCAL "I
+  ATR "I 1
+  FAÇA.ATÉ [
+    SE (RESTO :I 4) = 0 [
+      ESC :I
+    ]
+    ATR "I :I + 1
+  ] [:I > 19]
+FIM
+
+APRENDA CAP0521
+  FAÇAPARA [I 1 19] [
+    SE (RESTO :I 4) = 0 [
+      ESC :I
+    ]
+  ]
+FIM
+
+APRENDA CAP0522
+  LOCAL "I
+  ATR "I 0
+  REPITA 5 [
+    ESC :I
+    ATR "I :I + 1
+  ]
+FIM
+
+APRENDA CAP0523
+  LOCAL "I
+  ATR "I 0
+  ENQUANTO [:I <= 4] [
+    ESC :I
+    ATR "I :I + 1
+  ]
+FIM
+
+APRENDA CAP0524
+  LOCAL "I
+  ATR "I 0
+  FAÇA.ATÉ [
+    ESC :I
+    ATR "I :I + 1
+  ] [:I > 4]
+FIM
+
+APRENDA CAP0525
+  FAÇAPARA [I 0 4] [
+    ESC :I
+  ]
+FIM
+
+APRENDA CAP0527
+  LOCAL "I
+  ATR "I 0
+  ENQUANTO [:I <= 15] [
+    ESC :I
+    ATR "I :I + 3
+  ]
+FIM
+
+APRENDA CAP0528
+  LOCAL "I
+  ATR "I 0
+  FAÇA.ATÉ [
+    ESC :I
+    ATR "I :I + 3
+  ] [:I > 15]
+FIM
+
+APRENDA CAP0529
+  FAÇAPARA [I 0 15 3] [
+    ESC :I
+  ]
+FIM
+
+APRENDA CASINHA
+  UL
+  FAÇAPARA [I 1 4] [PF 80 PD  90]
+  PF 80 PD 90
+  FAÇAPARA [I 1 2] [PF 80 PE 120]
+  PF  80    MUDEPOS [ 0 0]
+  PD 150 UN MUDEPOS [10 0]
+  UL
+  PF 60 PD  90
+  PF 20 PD  90
+  PF 60 PD 180
+  UN
+  MUDEPOS [50 60]
+  UL
+  PD 90
+  FAÇAPARA [I 1 4] [PF 20 PD 90]
+  UN
+  MUDEPOS [0 0]
+  PE 90
+  UL
+FIM
+
+APRENDA CATAVENTO1
+  REPITA 4 [
+    RETANGULO3 PD 90
+  ]
+FIM
+
+APRENDA CATAVENTO2
+  REPITA 8 [
+    RETANGULO3 PD 45
+  ]
+FIM
+
+APRENDA DECAGONO
+  REPITA 10 [PF 30 PE 36]
+FIM
+
+APRENDA FLORLOSA1
+  PD 120
+  REPITA 3 [
+    LOSANGO 80 PD 120
+  ]
+FIM
+
+APRENDA FLORLOSA2
+  REPITA 4 [
+    LOSANGO 80 PE 90
+  ]
+FIM
+
+APRENDA FLORLOSA3
+  REPITA 4 [
+    LOSANGO 80 PD 90
+  ]
+FIM
+
+APRENDA FLORTRIG
+  REPITA 4 [
+    TRIANGEX PD 90
+  ]
+FIM
+
+APRENDA ICOSAGONO
+  REPITA 20 [PT 35 PD 18]
+FIM
+
+APRENDA LOSANGO :TAMANHO
+  REPITA 2 [
+    PF :TAMANHO PD 125
+    PF :TAMANHO PD  55
+  ]
+  PE 55 PT :TAMANHO PD 55
+FIM
+
+APRENDA PENTAGONO
+  PF  40
+  PD  72
+  PF  40
+  PD  72
+  PF  40
+  PD  72
+  PF  40
+  PD  72
+  PF  40
+  PD  72
+FIM
+
+APRENDA QUADRADO1 :TAMANHO
+  ATR "I 1
+  ENQUANTO [:I <= 4] [
+    PF :TAMANHO PD 90
+    ATR "I :I + 1
+  ]
+FIM
+
+APRENDA QUADRADO2 :TAMANHO
+  FAÇAPARA [I 1 4] [
+    PF :TAMANHO PD 90
+  ]
+FIM
+
+APRENDA QUADRADO3 :TAMANHO
+  ATR "I 1
+  FAÇA.ATÉ [
+    PF :TAMANHO PD 90
+    ATR "I :I + 1
+  ] [:I > 4]
+FIM
+
+APRENDA QUADRO :TAMANHO
+  REPITA 4 [
+    PF :TAMANHO
+    PD 90
+  ]
+  PD 45
+  PF :TAMANHO * 7 / 5
+  PT :TAMANHO * 7 / 5
+  PE 45
+  PF :TAMANHO
+  PD 135
+  PF :TAMANHO * 7 / 5
+  PT :TAMANHO * 7 / 5
+FIM
+
+APRENDA RETAMETA :TAMANHO
+  REPITA 2 [
+    PF :TAMANHO PD 90
+    PF :TAMANHO / 2 PD 90
+  ]
+FIM
+
+APRENDA RETANGULO1
+  PF  60
+  PD  90
+  PF 100
+  PD  90
+  PF  60
+  PD  90
+  PF 100
+  PD  90
+FIM
+
+APRENDA RETANGULO2
+  REPITA 2 [
+    PT  60
+    PE  90
+    PT 100
+    PE  90
+  ]
+FIM
+
+APRENDA RETANGULO3
+  REPITA 2 [
+    PF 100
+    PD  90
+    PF  50
+    PD  90
+  ]
+FIM
+
+APRENDA TRIANGEX
+  REPITA 3 [
+    PT 70 PE 120
+  ]
+FIM
+
+APRENDA TRIANGPR :TAMANHO
+  FAÇAPARA [O 0 2] [
+    PF :TAMANHO PD 120
+  ]
+FIM
+
+APRENDA VENTITRIG
+  REPITA 8 [
+    TRIANGEX PE 45
+  ]
+FIM
+
+atribua "i 5
+atribua "r 1

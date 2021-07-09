@@ -1,0 +1,96 @@
+﻿APRENDA ESPIRAL :TAMANHO :ANGULO :NUMERO
+  SE :NUMERO = 0 [
+    PARE
+  ]
+  PF :TAMANHO
+  PD :ANGULO
+  ESPIRAL (:TAMANHO + 8) :ANGULO (:NUMERO - 1)
+FIM
+
+APRENDA FLOR
+  TAT
+  REPITA 8 [PETALA PD 45]
+FIM
+
+APRENDA FLORAL :N
+  SESENÃO (OU :N < 1 :N > 7) [
+    ESCREVA [Use valores entre 1 e 7]
+  ][
+    REPITA 8 [
+      PD 45 
+      REPITA :N [
+        REPITA 90 [
+          PF 2 
+          PD 2
+        ] 
+        PD 90
+      ]
+    ]
+  ]
+FIM
+
+APRENDA IMPAR :N
+  SE (RESTO :N 2) <> 0 [ESCREVA [Ok]]
+FIM
+
+APRENDA MAXIMO :A :B
+  SESENÃO :A > :B [ESC :A] [ESC :B]
+FIM
+
+APRENDA MEIOCIRC
+  REPITA 90 [PF 1 PD 1]
+FIM
+
+APRENDA PAR :N
+  SESENÃO (RESTO :N 2) = 0 [ESCREVA [Ok]] [ESCREVA [Erro]]
+FIM
+
+APRENDA PETALA
+  MEIOCIRC
+  PD 90
+  MEIOCIRC
+FIM
+
+APRENDA POLIS :TAMANHO :LADO
+  REPITA :LADO [PF :TAMANHO PD 360 / :LADO]
+FIM
+
+APRENDA QUAD1
+REPITA 4 [PF 80 PD 90] 
+fim
+
+APRENDA TESTE_E :N
+  SESENÃO (E :N >= 1 :N <= 9) [
+    ESC [Valor está na faixa de 1 a 9.]
+  ][
+    ESC [Valor não está na faixa de 1 a 9.]
+  ]
+FIM
+
+APRENDA TESTE_NAO :V
+  SE (NÃO :V > 5) [
+    ESC POTÊNCIA :V 2
+  ]
+FIM
+
+APRENDA TESTE_OU :TEMPO
+  SESENÃO (OU MAIÚSCULAS :TEMPO = "FRIO MAIÚSCULAS :TEMPO = "CHUVOSO) [
+    ESC [Tempo ruim, proteja-se.]
+  ][
+    ESC [Tempo bom, aproveite.]
+  ]
+FIM
+
+APRENDA TRELICA :X
+  SE :X = 0 [PARE]
+  REPITA 4 [TRIANGULAR PF 40 PD 90]
+  PD 90 PF 40 PE 90
+  TRELICA :X - 1
+FIM
+
+APRENDA TRIANGULAR
+  PF 40 PD 135 
+  PF 40 / RAIZQ 2 PD 90 
+  PF 40 / RAIZQ 2 PD 135
+FIM
+
