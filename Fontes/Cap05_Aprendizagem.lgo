@@ -1,0 +1,126 @@
+﻿APRENDA AREACIRC
+  ESC [Informe a medida do raio de uma circunferência:]
+  ATR "RAIO LEIAP
+  ATR "AREA PI * (POTÊNCIA :RAIO 2)
+  ESC (FRASE "Área "= FORMATONÚMERO :AREA 0 2)
+FIM
+
+APRENDA CALCULAQUAD
+  FAÇA.ATÉ [
+    ESC [Entre um valor numérico:]
+    ATR "VLR INTEIRO LEIAP
+  ][:VLR >= 0]
+  ESC (FR "Resultado "= POTÊNCIA :VLR 2)
+FIM
+
+APRENDA DECISAO
+  ESC [Entre um valor numérico para a variável <A>:]
+  ATR "A LEIAP
+  ESC [Entre um valor numérico para a variável <B>:]
+  ATR "B LEIAP
+  ATR "X :A + :B
+  SE :X > 10 [
+    ESC (FR "Resultado "= :X)
+  ]
+FIM
+
+APRENDA DIRECAO
+  SE TECLA? [REALIZE RC]
+  DIRECAO
+FIM
+
+APRENDA FATORIAL
+  FAÇA.ATÉ [
+    ATR "FAT 1
+    FAÇA.ATÉ [
+      ESC [Entre um valor numérico:]
+      ATR "N INTEIRO LEIAP
+    ][:N >= 0]
+    FAÇAPARA [I 1 :N] [
+      ATR "FAT :FAT * :I 
+    ]
+    ESC (FR PALAVRA :N "! "= :FAT)
+    FAÇA.ATÉ [
+      ESC [Deseja continuar? Responda: SIM ou NÃO]
+      ATR "RESP LEIAP
+    ][OU MAIÚSCULAS :RESP = "SIM MAIÚSCULAS :RESP = "NÃO]
+  ][MAIÚSCULAS :RESP <> "SIM]
+FIM
+
+APRENDA INC :X
+  SE NÃO ÉNOME? :X [PARE]
+  SE ÉNÚMERO? VALOR :X [ATRIBUA :X 1 + VALOR :X]
+FIM
+
+APRENDA REALIZE :DIR
+  SE MAIÚSCULAS :DIR = "C [TAT]   ; Limpa área de trabalho. 
+  SE MAIÚSCULAS :DIR = "D [PD 10] ; Direção para direita.
+  SE MAIÚSCULAS :DIR = "E [PE 10] ; Direção para esquerda.
+  SE MAIÚSCULAS :DIR = "L [UL]    ; Ativa o lápis.
+  SE MAIÚSCULAS :DIR = "N [UN]    ; Desativa o lápis.
+  SE MAIÚSCULAS :DIR = "F [PF 2]  ; Anda para frente.
+  SE MAIÚSCULAS :DIR = "T [PT 2]  ; Anda para trás.
+FIM
+
+APRENDA SUBVARGLOBA2
+  ATR "CONTADORGX :CONTADORGX + 1
+  ESC :CONTADORGX
+FIM
+
+APRENDA TEXTOTRIANG1 :CONTEUDO
+  SE :CONTEUDO = " [PARE] ; Quando CONTEUDO for vazio PARE.
+  ESC :CONTEUDO
+  TEXTOTRIANG1 SEMPRIMEIRO :CONTEUDO
+FIM
+
+APRENDA TEXTOTRIANG2 :CONTEUDO
+  SE :CONTEUDO = " [PARE] ; Quando CONTEUDO for vazio PARE.
+  TEXTOTRIANG2 SEMPRIMEIRO :CONTEUDO
+  ESC :CONTEUDO
+FIM
+
+APRENDA TEXTOTRIANG3 :CONTEUDO
+  ATR "COMP CONTEITEM :CONTEUDO
+  SE :CONTEUDO = " [PARE] ; Quando CONTEUDO for vazio PARE.
+  TEXTOTRIANG2 SEMPRIMEIRO :CONTEUDO
+  ESC FORMATONÚMERO :CONTEUDO :COMP
+FIM
+
+APRENDA VARGLOBA1
+  ATR "CONTADORG 1
+  ESC :CONTADORG
+  ATR "CONTADORG :CONTADORG + 1
+  ESC :CONTADORG
+FIM
+
+APRENDA VARGLOBA2
+  ATR "CONTADORGX 1
+  ESC :CONTADORGX
+  SUBVARGLOBA2
+FIM
+
+APRENDA VARLOCAL1
+  LOCAL "CONTADORL
+  ATR "CONTADORL 1
+  ESC :CONTADORL
+  ATR "CONTADORL :CONTADORL + 1
+  ESC :CONTADORL
+FIM
+
+atribua "0 78.5398163397448
+atribua "a 5
+atribua "area 78.5398163397448
+atribua "b 6
+atribua "comp 14
+atribua "computador [100 PONTOS]
+atribua "contador 2
+atribua "contadorg 2
+atribua "contadorgx 2
+atribua "fat 5040
+atribua "n 7
+atribua "raio 5
+atribua "resp "não
+atribua "total 3
+atribua "vencedor "COMPUTADOR
+atribua "vlr 0
+atribua "x 11
